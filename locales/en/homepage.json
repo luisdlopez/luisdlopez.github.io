@@ -1,0 +1,14 @@
+{
+  "about-me": {
+    "more": "Check out the following links for a more in-depth look at my background and work:",
+    "text1": "I've been in the field since 2007 and I've worked on projects ranging from education platforms to home health care and gamification systems. My goal is always to create efficient and user-friendly web solutions.",
+    "text2": "Throughout my career, I've used a wide range of tools and technologies that have been instrumental in my projects. Here's a breakdown of what I typically work with:",
+    "title": "About me"
+  },
+  "greeting": {
+    "hello": "Hi! My name is",
+    "intro": "I am a full-stack developer with over 15 years of experience. I specialize in Javascript, Typescript and React. I focus mostly on frontend development and I am currently finishing my Google UX design certificate.",
+    "tag": "I build webapps using React."
+  },
+  "picture-caption": "summer 2023"
+}

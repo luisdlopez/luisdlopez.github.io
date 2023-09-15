@@ -1,0 +1,50 @@
+{
+  "title": "Showcase",
+  "coming-soon": {
+    "intro": "I'll be posting in-depth looks at the design and implementation of:",
+    "animated-components": "Some of the small (but fun to build) components I built for this site.",
+    "nav-footer": "The animation behind the navigation footer I built for this site (resize your window to see it if you haven't).",
+    "more": "As well as some React Native, sprite animations and frame rates, and much more."
+  },
+  "secondary-showcase-title": "Some components I have worked on",
+  "links": {
+    "coming-soon": "Coming soon",
+    "view": "See more"
+  },
+  "tags": {
+    "component-design": "Component design",
+    "design": "Design",
+    "mantine": "Mantine CSS",
+    "motion": "Framer motion",
+    "react": "React",
+    "ui": "UI"
+  },
+  "projects": [
+    {
+      "title": "Animated components",
+      "overview": "A couple of the animated components that I created for this website.",
+      "content": {
+        "sections": [
+          {
+            "title": "Introduction",
+            "text": [
+              "We're going to take a deep dive into some components I designed for this website.",
+              "The components, while small, had some pretty interesting challeneges. From animation, to responsive design, we'll take a look at all the steps that went into making them using Mantine CSS and framer motion."
+            ]
+          },
+          {
+            "title": "But first",
+            "text": [
+              "We want to make the components fit within the Mantine CSS framework.",
+              "For that, you need be aware of how Mantine suggests components should be written. Thankfully, there's a <a href=\"https://mantine.dev/guides/custom-components/\" target=\"blank\">great guide here</a> you can follow to make your components in a way that blends in with all components provded by the library."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Footer navigation",
+      "overview": "We'll take a look at the animation behind the footer navigation built for this website."
+    }
+  ]
+}

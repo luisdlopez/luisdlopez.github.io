@@ -1,0 +1,50 @@
+{
+  "title": "Projets",
+  "secondary-showcase-title": "Quelques composantes sur lesquels j'ai travaillé",
+  "coming-soon": {
+    "intro": "Je publierai des comptes rendus approfondis du design et de l'implémentation de :",
+    "animated-components": "Certaines des petites composantes que j'ai construites pour ce site.",
+    "nav-footer": "L'animation derrière le pied de page de navigation de ce site (redimensionnez votre fenêtre pour la voir si vous l'avez raté).",
+    "more": "Ainsi qu'un peu de React Native, des animations de sprites, et bien plus encore."
+  },
+  "links": {
+    "coming-soon": "À venir",
+    "view": "Voir plus"
+  },
+  "tags": {
+    "component-design": "Design de composante",
+    "design": "Design",
+    "mantine": "Mantine CSS",
+    "motion": "Framer motion",
+    "react": "React",
+    "ui": "UI"
+  },
+  "projects": [
+    {
+      "title": "Composantes animées",
+      "overview": "Quelques composantes animés que j'ai créés pour ce site web.",
+      "content": {
+        "sections": [
+          {
+            "title": "Introduction",
+            "text": [
+              "Nous allons voir en détail certains composantes que j'ai conçus pour ce site Web.",
+              "Les composantes, bien que petits, présentaient des défis assez intéressants. De l'animation au design adaptatif (« responsive »), nous examinerons toutes les étapes nécessaires à leur création à l'aide de Mantine CSS et la librairie framer motion."
+            ]
+          },
+          {
+            "title": "Mais tout d'abord",
+            "text": [
+              "Nous voulons que les composantes s'intègrent dans le framework CSS Mantine.",
+              "Pour cela, vous devez savoir comment Mantine suggère que les composantes soient écrits. Heureusement, il existe ici un <a href=\"https://mantine.dev/guides/custom-components/\" target=\"blank\">excellent guide</a> que vous pouvez suivre pour créer vos composantes d'une manière qui s'intègre à tous les composantes fournis par la bibliothèque."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "title": "Navigation du footer",
+      "overview": "Nous allons jeter un œil à l'animation derrière la navigation du footer conçu pour ce site web."
+    }
+  ]
+}
