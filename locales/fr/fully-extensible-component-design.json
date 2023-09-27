@@ -1,0 +1,76 @@
+{
+  "title": "Création d'un composant pleinement extensible.",
+  "introduction": {
+    "title": "Introduction",
+    "paragraph-1": "Nous allons voir en détails l'une des composantes que j'ai conçues pour ce site web.",
+    "paragraph-2": "Bien que cette composante soit petite, elle a présenté des défis plutôt intéressants. De la conception adaptative à l'animation, nous examinerons toutes les étapes qui ont été nécessaires pour la rendre pleinement extensible."
+  },
+  "design": {
+    "title": "Le design",
+    "paragraph-1": "L'idée est assez simple. Je souhaite une petite composante pour afficher tous les liens sociaux sur lesquels on peut me trouver. Imaginez une ligne montrant des icônes cliquables (liens). Comme une brochette. Mais avec des icônes au lieu de légumes. Je pense qu'une image serait plus parlante.",
+    "paragraph-2": "Elle devrait être animée, affichant ses éléments séquentiellement de la droite vers la gauche. Elle devrait aussi être adaptative (avec un hic) et les icônes devraient être fournies via des props."
+  },
+  "guiding-principles": {
+    "title": "Les principes directeurs",
+    "paragraph-1": "Nous pouvons procéder de plusieurs manières, alors pour simplifier, nous allons établir quelques règles. Le consommateur de cette composante devrait :",
+    "list": {
+      "item-1": "pouvoir remplacer les propriétés CSS de cette composante",
+      "item-2": "gérer l'aspect adaptatif",
+      "item-3": "éviter les nouveaux rendus chaque fois que la mise en page de cette composante change (en raison de son caractère adaptatif)"
+    },
+    "paragraph-2": "En d'autres termes, cette composante devrait permettre à son consommateur de modifier autant que possible son apparence et son ressenti."
+  },
+  "iteration-1": {
+    "title": "La base (iteration 1)",
+    "paragraph-1": "En utilisant Mantine CSS, nous réaliserons la version la plus simple de la composante à partir de laquelle nous itérerons. D'abord, notre fichier social-links.tsx :",
+    "paragraph-2": "Et maintenant, le CSS. Nous utiliserons la fonction createStyle de Mantine car c'est l'approche recommandée et elle sera utile lorsque nous commencerons à modifier la composante pour la rendre extensible.",
+    "paragraph-3": "Ce qui nous donne cette composante dans sa forme la plus basique :"
+  },
+  "iteration-2": {
+    "title": "Animation (iteration 2)",
+    "paragraph-1": "En utilisant Motion, nous ajouterons l'animation à la composante. De manière générale, voici les modifications que nous devons faire :",
+    "list": {
+      "item-1": "remplacer l'élément div racine par motion.div. Bien que cette composante ne soit pas animée, elle orchestrera les animations de ses éléments enfants",
+      "item-2": "tous les éléments enfants seront animés - remplacez-les par leurs équivalents Motion (motion.div et motion.a)",
+      "item-3": "ajouter les variantes qui définiront l'animation"
+    },
+    "paragraph-2": "Faisons les étapes 1 et 2, qui sont assez simples :",
+    "paragraph-3": "La dernière étape nécessite quelques explications.",
+    "paragraph-4": "D'abord, les variantes. Les variantes vous permettent de définir des états d'animation et de les organiser par nom. Bien que motion vous permette de déclarer des animations en ligne comme ceci :",
+    "paragraph-5": "Il est possible de définir des animations dans une variable séparée qui peut être partagée entre plusieurs éléments :",
+    "paragraph-6": "Un autre aspect intéressant des variantes est la propagation de l'animation. Un élément enfant n'a pas besoin de redéfinir animate, whileHover, etc., pour animer simultanément avec son parent. Il lui suffit d'avoir un ensemble de variantes portant les mêmes noms.",
+    "paragraph-7": "Alors, que voulons-nous exactement ? Deux choses :",
+    "list-2": {
+      "item-1": "nous voulons que tous les éléments enfants \"grandissent\" (une transformation CSS de type scale) horizontalement, de 0 à 100%, de droite à gauche.",
+      "item-2": "nous voulons qu'ils apparaissent séquentiellement, un à la fois, du premier au dernier. Nous pouvons le faire en utilisant la propriété staggerChildren sur l'élément parent."
+    },
+    "paragraph-8": "Ce qui nous donne ceci :"
+  },
+  "iteration-3": {
+    "title": "Rendre le composant extensible (iteration 3)",
+    "paragraph-1": "Pour cette partie, nous allons simplement suivre le guide fourni par Mantine, <anchor>ici</anchor>. Ceci vous montre comment écrire des composantes personnalisées afin qu'elles s'intègrent pleinement avec MantineProvider et, plus important encore, comment ajouter le support de l'API Styles.",
+    "paragraph-2": "Le support de l'API Styles est particulièrement intéressant car c'est ce qui permettra aux consommateurs de notre composante de cibler toutes les classes CSS et même de modifier complètement l'apparence et le ressenti de nos composantes. Cela permettra même aux consommateurs d'ajouter des media queries au CSS de notre composante.",
+    "paragraph-3": "Mais, si vous observez attentivement l'animation, vous pouvez voir que quelque chose cloche. Corrigeons-le."
+  },
+  "iteration-4": {
+    "title": "Rendre l'animation extensible (iteration 4)",
+    "paragraph-1": "Actuellement, le CSS peut être modifié pour faire en sorte que la composante ressemble à tout ce que nous voulons. Mais l'animation est toujours la même. Chaque enfent évolue d'une échelle de 0 à 1, de la droite vers la gauche. Comment pouvons-nous rendre cette partie de la composante extensible ?",
+    "paragraph-2": "La documentation de Motion ne parle pas vraiment d'animations adaptatives. Mais elle mentionne les variables CSS. Une rapide recherche sur Google nous amène <anchor>ici</anchor>. Les variables CSS nous aideront à atteindre notre objectif.",
+    "paragraph-3": "Voici ce que nous voulons :",
+    "list": {
+      "item-1": "notre composante définira des variables CSS",
+      "item-2": "nos animations utiliseront ces variables CSS",
+      "item-3": "le consommateur pourra remplacer la valeur de ces variables CSS en utilisant des media queries"
+    },
+    "paragraph-4": "Les deux premières étapes ressemblent à ceci :",
+    "paragraph-5": "Et comme ça, nous avons (raisonnablement) ouvert la composante d'une manière qui permettra à un consommateur de la modifier comme il le souhaite. Testons:",
+    "paragraph-6": "Voilà ! Notre composante est pleinement adaptative, et il est possible pour quiconque de modifier son apparence et son ressenti, y compris la direction de l'animation elle-même.",
+    "paragraph-7": "Si vous souhaitez jeter un coup d'œil au code complet de la composante tel qu'il a été écrit pour ce site web, vous pouvez cliquer <anchor>ici.</anchor>"
+  },
+  "takeaways": {
+    "title": "Points clés à retenir",
+    "paragraph-1": "Premièrement, et le plus important de tous : L'itération est essentielle. Dès le début, vous devriez identifier les différentes étapes de construction de la composante afin de ne jamais être submergé par une complexité accumulée.",
+    "paragraph-2": "Deuxièmement (un point subtil), vous pouvez obtenir des animations adaptatives avec Motion en utilisant des variables CSS.",
+    "paragraph-3": "Et enfin, utiliser le bon outil vous permet d'obtenir facilement ce que vous voulez. Grâce à Mantine, permettre à un consommateur un contrôle total sur l'apparence et le ressenti de la composante était aussi simple que de suivre leur tutoriel."
+  }
+}

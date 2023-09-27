@@ -1,0 +1,76 @@
+{
+  "title": "Making a fully extensible component",
+  "introduction": {
+    "title": "Introduction",
+    "paragraph-1": "We're going to take a deep dive into one of the components I designed for this website.",
+    "paragraph-2": "The component, while small, had some pretty interesting challenges. From responsive design, to animation, we'll take a look at all the steps that went into making it fully extensible."
+  },
+  "design": {
+    "title": "The design",
+    "paragraph-1": "The idea is simple enough. I want a small component to display all social links I can be found on. Picture a line that shows clickable icons (links). Like a skewer. But icons instead of vegetables. I think an image will be easier to understand.",
+    "paragraph-2": "It should be animated, displaying its elements sequentially from right to left. It should also be responsive (with a catch) and icons should come from via props."
+  },
+  "guiding-principles": {
+    "title": "The guiding principles",
+    "paragraph-1": "This can go many different ways, so to make things simple, we'll set some rules. The consumer of this components should:",
+    "list": {
+      "item-1": "be able to override this component's CSS properties",
+      "item-2": "handle the responsiveness",
+      "item-3": "avoid re-renders whenever this component's layout changes (due to its responsiveness)"
+    },
+    "paragraph-2": "In other words, this components should allow its consumer to change as much of its look and feel as possible."
+  },
+  "iteration-1": {
+    "title": "The base (iteration 1)",
+    "paragraph-1": "Using Mantine CSS, we'll make the absolute simplest version of the component from which we will iterate. First, out social-links.tsx file:",
+    "paragraph-2": "And now, the CSS. We will be using Mantine's createStyle function as it is the recommended approach and it will come in handy when we start changing the component to make it extensible.",
+    "paragraph-3": "Which gives us this bare bones component:"
+  },
+  "iteration-2": {
+    "title": "Animation (iteration 2)",
+    "paragraph-1": "Using motion, we will add the animation to the component. At a high level, these are the changes we need to make:",
+    "list": {
+      "item-1": "replace the root div element by motion.div. While this component is not animated, it will orchestrate its children's animations.",
+      "item-2": "all children elements will be animated - replace them by their motion counterparts (motion.div and motion.a)",
+      "item-3": "add the variants that will define the animation"
+    },
+    "paragraph-2": "Let's go ahead and do steps 1 and 2, which are pretty straightforward:",
+    "paragraph-3": "The last step requires some explanation.",
+    "paragraph-4": "First, variants. Variants allow you to define animation states and organise them by name. While motion allows you to declare animations inline like so:",
+    "paragraph-5": "It is possible to define animations in a seperate variable that can be shared across multiple elements:",
+    "paragraph-6": "Another fun thing variants bring is animation propagation. A child element doesn't need to redefine animate, whileHover, etc., to animate simultaneously with its parent. It just needs to have a set of variants with the same names.",
+    "paragraph-7": "So what exactly do we want? 2 things:",
+    "list-2": {
+      "item-1": "we want all child elements to \"grow\" (a css transformation of type scale) horizontally, from 0 to 100%, from right to left.",
+      "item-2": "we want them to show up sequentially, one at a time, from first to last. We can do this by using the property staggerChildren on the parent element."
+    },
+    "paragraph-8": "Which gives us this:"
+  },
+  "iteration-3": {
+    "title": "Making the component extensible (iteration 3)",
+    "paragraph-1": "For this part, we're just going to follow the guide provided by Mantine, <anchor>here.</anchor> This shows you how to write custom components so that they integrate fully with with MantineProvider and, more importantly, how to add Styles API support.",
+    "paragraph-2": "The Styles API support is particularly great since this is what will allow our component's consumer to target all css classes and even override our components look and feel completely. It will even allow consumers to add media queries to our component's css.",
+    "paragraph-3": "But, if you look at the animation closely, you can see something's off. Let's fix it."
+  },
+  "iteration-4": {
+    "title": "Making the animation extensible (iteration 4)",
+    "paragraph-1": "Right now, the CSS can be changed to make the component look like anything we want. But the animation is always the same. Each element scales from 0 to 1, from right to left. How can we open this part of the component to be extensible?",
+    "paragraph-2": "Motion's documentation does not really talk about responsive animations. But it does mention CSS variables. A quick google search takes us <anchor>here.</anchor> CSS variables will helps us achieve our goal.",
+    "paragraph-3": "Here's what we want:",
+    "list": {
+      "item-1": "our component will define CSS variables",
+      "item-2": "our animations will use those CSS variables",
+      "item-3": "the consumer will be able to override the value of those CSS variables using media queries"
+    },
+    "paragraph-4": "The first 2 steps look like this:",
+    "paragraph-5": "And just like that, we've (reasonably) opened up the component in a way that will allow a consumer to change it how it wants. Let's test it.",
+    "paragraph-6": "There! Our component is fully responsive, and it is possible for anyone to modify its look and feel, including the direction of the animation itself.",
+    "paragraph-7": "If you want to take a look at the complete code of the component as it was written for this website, you can click <anchor>here.</anchor>"
+  },
+  "takeaways": {
+    "title": "Key takeaways",
+    "paragraph-1": "First, and most important of all: Iteration is key. Early on, you should identify the different building steps of the component so that you are never overwhelmed by accumulated complexity.",
+    "paragraph-2": "Second (a sneaky one), you can get responsive animations in Motion using CSS variables.",
+    "paragraph-3": "And lastly, using the right tool allows you to easily get what you want. Thanks to Mantine, allowing a consumer complete control over the components's look and feel was as simple as following their tutorial."
+  }
+}
