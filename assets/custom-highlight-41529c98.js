@@ -1,0 +1,1 @@
+import{j as t}from"./index-501d9989.js";import{H as h}from"./Highlight-9256b14e.js";const o=i=>t.jsx(h,{...i,highlightColor:"yellow",highlightStyles:{padding:".3rem .2rem"},children:i.children});export{o as C};
