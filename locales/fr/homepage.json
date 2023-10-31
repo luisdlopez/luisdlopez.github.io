@@ -4,7 +4,7 @@
   "of-experience": "d'expérience",
   "projects": "projets",
   "about-me": {
-    "more": "Consultez les liens suivants pour un aperçu plus approfondi de mon parcours et de mon travail :",
+    "more": "Consultez le lien suivant pour un aperçu plus approfondi de mon parcours.",
     "text1": "Je suis dans le domaine depuis 2007 et j'ai travaillé sur des projets allant des plateformes éducatives aux soins de santé à domicile et aux systèmes de gamification. Mon objectif est toujours de créer des solutions web efficaces et conviviales.",
     "text2": "Tout au long de ma carrière, j'ai utilisé un large éventail d'outils et de technologies qui ont joué un rôle déterminant dans mes projets. Voici un aperçu de ce avec quoi je travaille habituellement :",
     "title": "À propos de moi"
@@ -12,7 +12,25 @@
   "greeting": {
     "hello": "Salut! Je m'appelle",
     "intro": "Je suis un développeur full-stack avec plus de 15 ans d'expérience. Je me spécialise en Javascript, Typescript et React. Je me concentre principalement sur le développement frontend et je termine actuellement mon certificat de design UX de Google.",
-    "tag": "Je crée des applications web avec React."
+    "intro-2": "Ayant travaillé dans divers domaines allant de l'éducation aux soins de santé, j'ai démontré une capacité constante à m'adapter et à prospérer dans tout nouveau défi ou secteur (i.e. je réussis bien sous pression).",
+    "intro-3": "Mon objectif est toujours de créer des solutions Web efficaces, conviviales et faciles à maintenir .",
+    "tag": "Je crée des apps. web avec React"
+  },
+  "highlights": {
+    "title": "Points clés",
+    "list": [
+      "J'ai été <inlineBold>développeur full stack</inlineBold> pendant la moitié de ma carrière, donc je suis à l'aise à faire du travail <inlineBold>backend</inlineBold>.",
+      "J'ai travaillé en tant que <inlineBold>consultant</inlineBold> pendant presque 6 ans, donc je sais comment parler aux non-développeurs.",
+      "J'ai travaillé sur des <inlineBold>applications hybrides</inlineBold>, <i>mobile first</i> pendant presque 4 ans.",
+      "J'ai également travaillé sur de <inlineBold>l'infrastructure</inlineBold> (AWS, Azure, Firebase).",
+      "J'ai <inlineBold>dirigé des projets</inlineBold> et des initiatives de fonctionnalités :",
+      "de l'analyse et de la planification jusqu'au déploiement et à la maintenance",
+      "s'étalant sur plusieurs mois (jusqu'à un an)",
+      "avec de petites équipes allant jusqu'à 3 développeurs juniors à intermédiaires.",
+      "J'ai aidé les designers UX et les chefs de produit à <inlineBold>valider la faisabilité technique</inlineBold> des fonctionnalités à venir.",
+      "J'ai aidé à <inlineBold>interviewer et évaluer</inlineBold> les candidats à l'embauche.",
+      "J'ai pris en charge le <inlineBold>processus d'intégration</inlineBold> pour les nouveaux arrivants."
+    ]
   },
   "picture-caption": "Salut!"
 }

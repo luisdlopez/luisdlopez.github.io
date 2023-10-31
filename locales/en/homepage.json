@@ -4,7 +4,7 @@
   "of-experience": "of experience",
   "projects": "projects",
   "about-me": {
-    "more": "Check out the following links for a more in-depth look at my background and work:",
+    "more": "Check out the following link for a more in-depth look at my background.",
     "text1": "I've been in the field since 2007 and I've worked on projects ranging from education platforms to home health care and gamification systems. My goal is always to create efficient and user-friendly web solutions.",
     "text2": "Throughout my career, I've used a wide range of tools and technologies that have been instrumental in my projects. Here's a breakdown of what I typically work with:",
     "title": "About me"
@@ -12,7 +12,25 @@
   "greeting": {
     "hello": "Hi! My name is",
     "intro": "I am a full-stack developer with over 15 years of experience. I specialize in Javascript, Typescript and React. I focus mostly on frontend development and I am currently finishing my Google UX design certificate.",
-    "tag": "I build webapps using React."
+    "intro-2": "Having worked across diverse fields from education to health care, I've demonstrated a consistent ability to adapt and thrive in any new challenge or industry (i.e. I do well under pressure).",
+    "intro-3": "My goal is always to create efficient, user-friendly and easy to maintain web solutions.",
+    "tag": "I build webapps using React"
+  },
+  "highlights": {
+    "title": "Highlights",
+    "list": [
+      "I was a <inlineBold>full stack developer</inlineBold> for half of my career, so I am comfortable doing backend work",
+      "I have worked as a <inlineBold>consultant</inlineBold> for almost 6 years, so I know how to talk to non-developers",
+      "I have worked on mobile first, <inlineBold>hybrid apps</inlineBold> for almost 4 years",
+      "I have worked on <inlineBold>infrastructure</inlineBold> as well (AWS, Azure, Firebase)",
+      "I have <inlineBold>led projects</inlineBold> and feature initiatives :",
+      "from analysis and planning all the way to deployment and maintenance",
+      "spanning multiple months (up to a year)",
+      "with small squads of up to 3 junior to mid-level developers",
+      "I have helped UX designers and product owners <inlineBold>validate technical feasibility</inlineBold> of upcoming features",
+      "I have helped i<inlineBold>nterview and evaluate</inlineBold> job candidates ",
+      "I have taken ownership of the <inlineBold>onboarding process</inlineBold> for newcomers"
+    ]
   },
   "picture-caption": "Hi!"
 }
